@@ -8,7 +8,8 @@ import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.List;
-
+import com.github.sarxos.webcam.Webcam;
+import com.github.sarxos.webcam.WebcamDevice;
 import java.awt.event.*;
 
 import javax.imageio.ImageIO;
@@ -97,7 +98,6 @@ public class Camera_GUI_System {
 		/**
 		 * CAMERA VIEW SETUP
 		 */
-
 		this.webcams = Webcam.getWebcams();
 
 		if (webcams.size() >= 2) {
@@ -318,8 +318,8 @@ public class Camera_GUI_System {
 								addProcessingText("Failed to delete the file.");
 							}
 
-							String FacemarkSetting = null;
-//        					String FacemarkSetting = "NumberedPoints";
+
+//
 
 							int[][] Facemarks = null;
 
@@ -327,6 +327,8 @@ public class Camera_GUI_System {
 							 * This do while will take photos, if the photo contains no faces or more than 1
 							 * then it will keep taking photos until there is only one face in the photo
 							 */
+
+							String FacemarkSetting = "NumberedPoints";
 
 							do {
 

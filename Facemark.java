@@ -10,6 +10,7 @@ import org.bytedeco.opencv.opencv_face.*;
 import org.bytedeco.opencv.opencv_highgui.*;
 import org.bytedeco.opencv.opencv_imgproc.*;
 import org.bytedeco.opencv.opencv_objdetect.*;
+import org.opencv.photo.Photo;
 //import org.opencv.imgproc.Imgproc;
 
 import static org.bytedeco.opencv.global.opencv_core.*;
@@ -71,7 +72,7 @@ public class Facemark {
 		 */
 		
 		RectVector faces = new RectVector();
-		faceDetector.detectMultiScale(gray, faces);
+		faceDetector.detectMultiScale(img, faces);
 
 		System.out.println("Faces detected: " + faces.size());
 
@@ -187,7 +188,7 @@ public class Facemark {
 		/**
 		 * Saves a photo with the landmarks
 		 */
-			imwrite("Photos\\Facemark Output\\" + "Facemark_Output_"+ "1" +".jpg", img);
+			imwrite("Photos\\Facemark Output\\" + "Facemark_Output_"+ PhotoNameAndLocation.substring(PhotoNameAndLocation.length()-8,PhotoNameAndLocation.length()-4) +".jpg", img);
 		
 		}
 
